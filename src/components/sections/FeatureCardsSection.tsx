@@ -19,16 +19,6 @@ export function FeatureCardsSection({ section }: { section: Props }) {
               <article
                 className={`group flex h-full flex-col rounded-[20px] p-[27px] transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-24px_rgba(44,57,63,0.55)] ${green ? "bg-green text-white" : "bg-white"}`}
               >
-              {card.icon?.image && (
-                <div className="mb-5 flex justify-center">
-                  <FigureImg
-                    figure={card.icon}
-                    fit="contain"
-                    sizes="170px"
-                    className="h-[98px] w-auto transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-3"
-                  />
-                </div>
-              )}
               {card.image?.image && (
                 <div className="relative mb-5 aspect-[367/220] overflow-hidden rounded-[8px]">
                   <FigureImg
@@ -40,7 +30,19 @@ export function FeatureCardsSection({ section }: { section: Props }) {
                 </div>
               )}
               {card.title && (
-                <h3 className={`mb-6 text-[24px] ${green ? "font-bold text-white" : "mb-4 text-purple"}`}>{card.title}</h3>
+                <h3 className={`text-center text-[24px] ${green ? "font-bold text-white" : "text-purple"} ${green && !card.icon?.image ? "mb-6" : "mb-4"}`}>
+                  {card.title}
+                </h3>
+              )}
+              {card.icon?.image && (
+                <div className="mb-6 flex justify-center">
+                  <FigureImg
+                    figure={card.icon}
+                    fit="contain"
+                    sizes="170px"
+                    className="h-[64px] w-auto md:h-[72px] lg:h-[98px] transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-3"
+                  />
+                </div>
               )}
               <RichText value={card.body} tone={green ? "light" : "muted"} />
               </article>
