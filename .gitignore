@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# seed : médias de l'ancien site (déjà importés dans Sanity) et aperçu généré
+/seed/assets
+/seed/preview.ndjson
