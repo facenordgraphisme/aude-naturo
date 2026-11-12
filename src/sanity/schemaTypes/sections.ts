@@ -498,6 +498,7 @@ export const contactSection = defineType({
     defineField({ name: "subtitle", title: "Sous-titre", type: "text", rows: 2, group: "content" }),
     defineField({ name: "nameLabel", title: "Libellé « Nom »", type: "string", initialValue: "Nom", group: "content" }),
     defineField({ name: "phoneLabel", title: "Libellé « Téléphone »", type: "string", initialValue: "Numéro de téléphone", group: "content" }),
+    defineField({ name: "emailLabel", title: "Libellé « E-mail »", type: "string", initialValue: "Adresse e-mail", group: "content" }),
     defineField({ name: "messageLabel", title: "Libellé « Message »", type: "string", initialValue: "Votre demande", group: "content" }),
     defineField({ name: "submitLabel", title: "Bouton d'envoi", type: "string", initialValue: "Envoyer", group: "content" }),
     defineField({ name: "successMessage", title: "Message de confirmation", type: "text", rows: 2, group: "content" }),

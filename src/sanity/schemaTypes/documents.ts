@@ -90,6 +90,7 @@ export const contactMessage = defineType({
   fields: [
     defineField({ name: "name", title: "Nom", type: "string" }),
     defineField({ name: "phone", title: "Téléphone", type: "string" }),
+    defineField({ name: "email", title: "E-mail", type: "string" }),
     defineField({ name: "message", title: "Demande", type: "text" }),
     defineField({ name: "page", title: "Page", type: "string" }),
     defineField({ name: "createdAt", title: "Reçu le", type: "datetime" }),

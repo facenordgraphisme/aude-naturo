@@ -521,6 +521,7 @@ export function buildDocuments({ img, file }) {
         subtitle: "Aude Escoffier Naturopathe à Embrun dans les Hautes-Alpes",
         nameLabel: "Nom",
         phoneLabel: "Numéro de téléphone",
+        emailLabel: "Adresse e-mail",
         messageLabel: "Votre demande",
         submitLabel: "Envoyer",
         successMessage: "Merci de nous avoir contactés. Nous reviendrons vers vous dès que possible.",

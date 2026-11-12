@@ -8,6 +8,7 @@ import { btnClass } from "@/components/ui/btnClass";
 type Labels = {
   nameLabel: string;
   phoneLabel: string;
+  emailLabel: string;
   messageLabel: string;
   submitLabel: string;
   successMessage: string;
@@ -45,6 +46,13 @@ export function ContactForm(props: Labels) {
           {props.phoneLabel}
         </label>
         <input id="contact-phone" name="phone" type="tel" autoComplete="tel" className={`${field} mt-2 h-[38px]`} />
+      </div>
+      <div>
+        <label htmlFor="contact-email" className={label}>
+          {props.emailLabel}
+        </label>
+        <input id="contact-email" name="email" type="email" autoComplete="email" className={`${field} mt-2 h-[38px]`} />
+        <p className="mt-2 text-[14px] text-muted">Indiquez au moins un e-mail ou un téléphone pour que je puisse vous répondre.</p>
       </div>
       <div>
         <label htmlFor="contact-message" className={label}>

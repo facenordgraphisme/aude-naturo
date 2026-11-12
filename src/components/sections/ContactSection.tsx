@@ -19,6 +19,7 @@ export function ContactSection({ section }: { section: Props }) {
             <ContactForm
               nameLabel={section.nameLabel ?? "Nom"}
               phoneLabel={section.phoneLabel ?? "Numéro de téléphone"}
+              emailLabel={section.emailLabel ?? "Adresse e-mail"}
               messageLabel={section.messageLabel ?? "Votre demande"}
               submitLabel={section.submitLabel ?? "Envoyer"}
               successMessage={section.successMessage ?? "Merci de nous avoir contactés."}

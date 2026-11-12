@@ -159,6 +159,7 @@ export type ContactSection = Base & {
   subtitle?: string;
   nameLabel?: string;
   phoneLabel?: string;
+  emailLabel?: string;
   messageLabel?: string;
   submitLabel?: string;
   successMessage?: string;
