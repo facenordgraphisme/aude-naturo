@@ -533,7 +533,7 @@ export function buildDocuments({ img, file }) {
         infoPhone: "06 76 38 74 45",
         infoEmailTitle: "E-mail",
         infoEmailText: "aude.escoffier@gmail.com",
-        infoEmailHref: "contact@aude-naturo.fr",
+        infoEmailHref: "aude.escoffier@gmail.com",
         background: "beige",
       }),
       section("locationSection", {
@@ -603,7 +603,7 @@ export function buildDocuments({ img, file }) {
     logo: img("Logo-aude-escoffier-naturo.png"),
     logoAlt: "logo aude escoffier naturopathe",
     phone: "06 76 38 74 45",
-    email: "contact@aude-naturo.fr",
+    email: "aude.escoffier@gmail.com",
     facebookUrl: "https://www.facebook.com/aude.escoffier.5/",
     defaultOgImage: ogDefault,
     mainNav: [

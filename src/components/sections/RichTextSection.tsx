@@ -11,7 +11,7 @@ export function RichTextSection({ section }: { section: Props }) {
         <RichText
           value={section.body}
           tone={section.textTone ?? "muted"}
-          className="[&_a]:text-purple [&_h1]:mb-2 [&_h2]:mt-0 [&_h3]:mt-0 [&_strong]:font-bold"
+          className="[&_a]:text-purple [&_h1]:mb-8 [&_h2]:mt-10 [&_h2]:mb-3 [&_h3]:mt-6 [&_h3]:mb-2 [&_p+p]:mt-2 [&_ul]:my-3 [&_li+li]:mt-1 [&_strong]:font-bold"
         />
         </Reveal>
       </Container>
