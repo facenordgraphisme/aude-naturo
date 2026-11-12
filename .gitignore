@@ -43,3 +43,10 @@ next-env.d.ts
 # seed : médias de l'ancien site (déjà importés dans Sanity) et aperçu généré
 /seed/assets
 /seed/preview.ndjson
+/seed/blog-preview.json
+# Artefacts de relecture du skill blog (rendus, rapports)
+/seed/blog/*/*.html
+/seed/blog/*/*.pdf
+/seed/blog/*/capabilities.json
+/seed/blog/*/preflight-report.json
+/seed/blog/*/preview/

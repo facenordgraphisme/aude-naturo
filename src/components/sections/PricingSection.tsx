@@ -1,4 +1,5 @@
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { TiltCard } from "@/components/motion/TiltCard";
 import { Btn } from "@/components/ui/Btn";
 import { Container, Section } from "@/components/ui/Section";
 import type { PricingSection as Props } from "@/sanity/lib/types";
@@ -13,8 +14,9 @@ export function PricingSection({ section }: { section: Props }) {
             const numeric = /\d/.test(plan.price ?? "");
             return (
               <StaggerItem key={plan._key} preset={hl ? "scale" : "up"} className="h-full">
+              <TiltCard className="h-full rounded-[16px]" max={5} glow={hl ? "rgba(255,255,255,0.2)" : "rgba(87,47,124,0.1)"}>
               <article
-                className={`flex h-full flex-col rounded-[16px] px-8 pt-[23px] pb-[31px] transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-24px_rgba(87,47,124,0.45)] ${hl ? "bg-purple text-white" : "border border-[#e3ded8] text-black"}`}
+                className={`flex h-full flex-col rounded-[16px] px-8 pt-[23px] pb-[31px] transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-24px_rgba(87,47,124,0.45)] ${hl ? "bg-purple text-white shadow-[0_30px_60px_-30px_rgba(87,47,124,0.7)]" : "border border-[#e3ded8] bg-white/60 text-black backdrop-blur-sm"}`}
               >
                 <div className="flex min-h-[40px] justify-center">
                   {plan.badge && (
@@ -44,6 +46,7 @@ export function PricingSection({ section }: { section: Props }) {
                   </div>
                 )}
               </article>
+              </TiltCard>
               </StaggerItem>
             );
           })}

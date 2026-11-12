@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { EASE } from "@/components/motion/Reveal";
+import { setScrollLocked } from "@/components/motion/SmoothScroll";
 
 export type NavLink = { label: string; href: string };
 
@@ -21,7 +22,8 @@ type Props = {
 
 function isActive(pathname: string, href: string) {
   const current = decodeURIComponent(pathname).replace(/\/$/, "") || "/";
-  return current === href;
+  // Une rubrique reste active sur ses sous-pages (ex. « Blog » sur /blog/mon-article)
+  return current === href || (href !== "/" && current.startsWith(`${href}/`));
 }
 
 const noop = () => () => {};
@@ -65,6 +67,7 @@ export function Header({ nav, logoUrl, logoAlt = "", drawerTitle, phone, email }
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    setScrollLocked(open);
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenOn(null);
     window.addEventListener("keydown", onKey);
@@ -77,7 +80,7 @@ export function Header({ nav, logoUrl, logoAlt = "", drawerTitle, phone, email }
     <>
       <motion.header
         className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-500 ${
-          open ? "bg-transparent" : "bg-beige/95 backdrop-blur-sm"
+          open ? "bg-transparent" : "bg-beige/70 backdrop-blur-xl backdrop-saturate-150"
         } ${scrolled && !open ? "shadow-[0_8px_30px_-18px_rgba(44,57,63,0.35)]" : ""}`}
         animate={{ y: hidden && !open ? "-100%" : "0%" }}
         transition={{ duration: 0.55, ease: EASE }}

@@ -226,4 +226,25 @@ export type SiteSettings = {
   legalNav?: NavItem[];
   drawerTitle?: string;
   footerBanner?: SanityImage;
+  marquee?: string[];
+};
+
+export type PostCard = {
+  _id: string;
+  title: string;
+  slug: string;
+  publishedAt?: string;
+  excerpt?: string;
+  cover?: SanityImage & { alt?: string };
+  tags?: string[];
+  readingTime?: number;
+};
+
+export type PostDoc = PostCard & {
+  updatedAt?: string;
+  author?: string;
+  takeaways?: string[];
+  body?: RichText;
+  seo?: Seo;
+  related?: PostCard[];
 };

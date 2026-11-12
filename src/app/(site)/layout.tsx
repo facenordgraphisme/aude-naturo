@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header, type NavLink } from "@/components/layout/Header";
+import { Ambient } from "@/components/motion/Ambient";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { getSettings } from "@/sanity/lib/fetch";
 import { urlFor } from "@/sanity/lib/image";
 import { getLinkMap, hrefFor } from "@/sanity/lib/links";
@@ -33,6 +35,8 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
 
   return (
     <MotionProvider>
+      <SmoothScroll />
+      <Ambient />
       <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:p-2">
         Aller au contenu
       </a>

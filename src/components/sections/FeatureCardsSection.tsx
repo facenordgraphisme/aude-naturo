@@ -1,4 +1,5 @@
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { TiltCard } from "@/components/motion/TiltCard";
 import { Heading } from "@/components/ui/Heading";
 import { RichText } from "@/components/ui/RichText";
 import { FigureImg } from "@/components/ui/SanityImg";
@@ -16,6 +17,7 @@ export function FeatureCardsSection({ section }: { section: Props }) {
         <Stagger className="grid gap-[26px] md:grid-cols-3" stagger={0.15}>
           {section.cards?.map((card) => (
             <StaggerItem key={card._key} className="h-full">
+              <TiltCard className="h-full rounded-[20px]" glow={green ? "rgba(255,255,255,0.18)" : "rgba(98,119,80,0.12)"}>
               <article
                 className={`group flex h-full flex-col rounded-[20px] p-[27px] transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-24px_rgba(44,57,63,0.55)] ${green ? "bg-green text-white" : "bg-white"}`}
               >
@@ -40,12 +42,13 @@ export function FeatureCardsSection({ section }: { section: Props }) {
                     figure={card.icon}
                     fit="contain"
                     sizes="170px"
-                    className="h-[64px] w-auto md:h-[72px] lg:h-[98px] transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-3"
+                    className="h-[64px] w-auto md:h-[72px] lg:h-[98px] transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-3 animate-float"
                   />
                 </div>
               )}
               <RichText value={card.body} tone={green ? "light" : "muted"} />
               </article>
+              </TiltCard>
             </StaggerItem>
           ))}
         </Stagger>

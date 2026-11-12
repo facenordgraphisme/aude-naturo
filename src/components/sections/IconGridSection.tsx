@@ -14,10 +14,10 @@ export function IconGridSection({ section }: { section: Props }) {
           {section.title}
         </Heading>
         <Stagger className="grid grid-cols-2 gap-x-9 gap-y-12 md:grid-cols-4 md:gap-y-[50px]" stagger={0.08}>
-          {section.items?.map((item) => (
+          {section.items?.map((item, i) => (
             <StaggerItem key={item._key} preset="up">
               <div className="group flex flex-col items-center text-center">
-                <div className={`flex items-center justify-center ${large ? "h-[96px]" : "h-[60px]"}`}>
+                <div className={`animate-float flex items-center justify-center ${large ? "h-[96px]" : "h-[60px]"}`} style={{ animationDelay: `${-i * 0.9}s` }}>
                   <SanityImg
                     image={item.icon}
                     alt=""

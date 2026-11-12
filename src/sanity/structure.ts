@@ -12,6 +12,7 @@ export const structure: StructureResolver = (S) =>
         .child(S.document().schemaType("siteSettings").documentId(SETTINGS_ID).title("Réglages du site")),
       S.divider(),
       S.documentTypeListItem("page").title("Pages"),
+      S.documentTypeListItem("post").title("Articles de blog"),
       S.divider(),
       S.documentTypeListItem("contactMessage").title("Messages reçus"),
     ]);

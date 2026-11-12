@@ -1,7 +1,8 @@
 import type { ColorName } from "@/sanity/lib/theme";
 
 export const bgClass: Record<ColorName, string> = {
-  beige: "bg-beige",
+  // Transparent : laisse voir les halos d'ambiance posés sur le fond beige du <body>
+  beige: "bg-transparent",
   cream: "bg-cream",
   white: "bg-white",
   grey: "bg-grey",

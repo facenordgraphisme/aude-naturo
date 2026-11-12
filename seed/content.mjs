@@ -610,12 +610,14 @@ export function buildDocuments({ img, file }) {
       nav("Qui suis-je ?", PAGE_IDS.quiSuisJe),
       nav("Naturopathie", PAGE_IDS.naturopathie),
       nav("Ateliers naturo", PAGE_IDS.prestations),
+      k({ _type: "navItem", label: "Blog", link: external("/blog") }),
       nav("Tarifs", PAGE_IDS.tarifs),
       nav("Contact", PAGE_IDS.contact),
     ],
     legalNav: [nav("Mentions légales", PAGE_IDS.mentions), nav("Politique de confidentialite et cookies", PAGE_IDS.politique)],
     drawerTitle: "NOUS CONTACTER",
     footerBanner: img("BANDEAU-BAS-DE-PAGE-naturo-f1ded2b0.png"),
+    marquee: ["Naturopathie", "Bien-être", "Alimentation", "Gestion du stress", "Ateliers", "Vitalité"],
   };
 
   return [home, quiSuisJe, naturopathie, prestations, tarifs, contact, mentions, politique, settings];

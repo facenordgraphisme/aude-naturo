@@ -32,7 +32,7 @@ export function ImageRowSection({ section }: { section: Props }) {
           {section.images?.map((fig, i) =>
             illustrations ? (
               <Reveal key={fig._key ?? i} preset="up" delay={i * 0.15} duration={1.1}>
-                <div className={`relative ${aspect} transition-transform duration-700 ease-out hover:-translate-y-2 hover:rotate-1`}>
+                <div className={`animate-float relative ${aspect} transition-transform duration-700 ease-out hover:-translate-y-2 hover:rotate-1`} style={{ animationDelay: `${-i * 1.3}s` }}>
                   <FigureImg figure={fig} fill fit="contain" sizes={sizes} />
                 </div>
               </Reveal>

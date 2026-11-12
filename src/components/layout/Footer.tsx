@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GrowingBanner } from "@/components/motion/GrowingBanner";
+import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
 import { urlFor } from "@/sanity/lib/image";
 import type { SiteSettings } from "@/sanity/lib/types";
 import { FooterLinks } from "./FooterNav";
 import type { NavLink } from "./Header";
+
+const DEFAULT_MARQUEE = ["Naturopathie", "Bien-être", "Alimentation", "Gestion du stress", "Ateliers", "Vitalité"];
 
 function ColumnTitle({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-5 font-serif text-[22px] text-purple">{children}</h2>;
@@ -14,7 +17,11 @@ function ColumnTitle({ children }: { children: React.ReactNode }) {
 export function Footer({ settings, nav, legalNav }: { settings: SiteSettings; nav: NavLink[]; legalNav: NavLink[] }) {
   const phone = settings.phone;
   return (
-    <footer className="bg-beige">
+    <footer>
+      <Marquee
+        items={settings.marquee?.length ? settings.marquee : DEFAULT_MARQUEE}
+        className="border-y border-purple/10 py-6 font-serif text-[34px] leading-none text-purple md:py-9 md:text-[64px]"
+      />
       {settings.footerBanner?.asset && (
         <GrowingBanner className="relative h-[180px] w-full md:h-[300px] lg:h-[435px]">
           <Image

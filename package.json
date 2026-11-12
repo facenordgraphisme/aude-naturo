@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node --env-file-if-exists=.env.local seed/seed.mjs",
+    "seed:blog": "node --env-file-if-exists=.env.local seed/blog.mjs",
     "typegen": "next typegen"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^6.19.0",
+    "lenis": "1.3.27",
     "motion": "^14.3.0",
     "next": "16.4.2",
     "next-sanity": "^13.3.4",

@@ -1,7 +1,7 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { client } from "./client";
-import { PAGE_BY_ID_QUERY, PAGE_BY_SLUG_QUERY, ROUTES_QUERY, SETTINGS_QUERY } from "./queries";
-import type { PageDoc, Route, SiteSettings } from "./types";
+import { PAGE_BY_ID_QUERY, PAGE_BY_SLUG_QUERY, POST_BY_SLUG_QUERY, POSTS_QUERY, ROUTES_QUERY, SETTINGS_QUERY } from "./queries";
+import type { PageDoc, PostCard, PostDoc, Route, SiteSettings } from "./types";
 
 // Toutes les lectures Sanity sont mises en cache et invalidées par le webhook /api/revalidate
 async function sanityFetch<T>(query: string, params: Record<string, string> = {}): Promise<T> {
@@ -22,3 +22,7 @@ export async function getHomePage() {
   if (!settings?.homeId) return null;
   return sanityFetch<PageDoc | null>(PAGE_BY_ID_QUERY, { id: settings.homeId });
 }
+
+export const getPosts = () => sanityFetch<PostCard[]>(POSTS_QUERY);
+
+export const getPostBySlug = (slug: string) => sanityFetch<PostDoc | null>(POST_BY_SLUG_QUERY, { slug });
